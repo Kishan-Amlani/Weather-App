@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Weather</title>
+        <link rel="icon" href="/img/weather.png">
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+        <div class="main-content">
+            {{>header}}
+            <p>Enter city name to get weather !</p>
+            
+            <form>
+                <input placeholder="City (Ex.:- Delhi)">
+                <button>Search</button>
+            </form>
+
+            <p id="message-1"></p>
+            <img id="weatherImg-1" src="">
+            <p id="message-2"></p>
+        </div>
+        {{>footer}}
+        <script src="/js/app.js"></script>
+    </body>
+</html>
