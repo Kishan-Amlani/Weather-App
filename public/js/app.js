@@ -1,5 +1,3 @@
-const getWeatherURL = new URL('/weather/getWeather')
-
 const weatherForm = document.querySelector('form')
 const searchInput = document.querySelector('input')
 const message1 = document.querySelector('#message-1')
@@ -12,11 +10,9 @@ weatherForm.addEventListener('submit', (event) => {
     weatherImg1.src = ''
     message2.textContent = ''
 
-    const city = searchInput.value
-    const getWeatherURLParam = city ? { city } : { city: 'Delhi' }
-    getWeatherURL.search = new URLSearchParams(getWeatherURLParam).toString()
+    const city = searchInput.value || 'Delhi'
 
-    fetch(getWeatherURL)
+    fetch(`/weather/getWeather?city=${city}`)
         .then((response) => {
             if (response.ok) {
                 return response.json()

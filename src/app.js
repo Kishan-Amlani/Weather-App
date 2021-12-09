@@ -35,7 +35,7 @@ app.get('/about', (req, res) => {
     })
 })
 
-app.get('/weather', async (req, res) => {
+app.get(['', '/weather'], async (req, res) => {
     res.render('weather', {
         title: 'Weather App',
         name: 'Kishan Amlani'
