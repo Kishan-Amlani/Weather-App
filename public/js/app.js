@@ -1,4 +1,4 @@
-const getWeatherURL = new URL('http://localhost:3000/weather/getWeather')
+const getWeatherURL = new URL('/weather/getWeather')
 
 const weatherForm = document.querySelector('form')
 const searchInput = document.querySelector('input')

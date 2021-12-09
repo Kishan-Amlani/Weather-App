@@ -5,6 +5,7 @@ import hbs from 'hbs'
 import { getCityCoordinates, getCurrentWeather } from './helper.js'
 
 const app = express()
+const port = process.env.PORT || 3000
 
 // Define paths for express config
 const publicDirectoryPath = path.join(fileURLToPath(import.meta.url), '../../public')
@@ -22,7 +23,7 @@ app.use(express.static(publicDirectoryPath))
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help',
-        name: 'FakeBoy100',
+        name: 'Kishan Amlani',
         helpMessage: 'This is a helpful text'
     })
 })
@@ -30,14 +31,14 @@ app.get('/help', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Me',
-        name: 'FakeBoy100'
+        name: 'Kishan Amlani'
     })
 })
 
 app.get('/weather', async (req, res) => {
     res.render('weather', {
         title: 'Weather App',
-        name: 'FakeBoy100'
+        name: 'Kishan Amlani'
     })
 })
 
@@ -73,7 +74,7 @@ app.get('/products', (req, res) => {
 app.get('/help/*', (req, res) => {
     res.render('404', {
         title: '404',
-        name: 'FakeBoy100',
+        name: 'Kishan Amlani',
         errorMessage: 'Help article not found.'
     })
 })
@@ -81,11 +82,11 @@ app.get('/help/*', (req, res) => {
 app.get('*', (req, res) => {
     res.render('404', {
         title: '404',
-        name: 'FakeBoy100',
+        name: 'Kishan Amlani',
         errorMessage: 'Page not found.'
     })
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server is up (´◡`)')
 })
