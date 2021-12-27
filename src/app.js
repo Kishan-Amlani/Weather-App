@@ -1,5 +1,6 @@
 import express from 'express'
 import path from 'path'
+import { fileURLToPath } from 'url'
 import hbs from 'hbs'
 import { getCityCoordinates, getCurrentWeather } from './helper.js'
 
@@ -7,9 +8,9 @@ const app = express()
 const port = process.env.PORT || 3000
 
 // Define paths for express config
-const publicDirectoryPath = path.join(path.resolve(), '../public')
-const viewsPath = path.join(path.join(path.resolve(), '../templates/views'))
-const partialsPath = path.join(path.join(path.resolve(), '../templates/partials'))
+const publicDirectoryPath = path.join(fileURLToPath(import.meta.url), '../../public')
+const viewsPath = path.join(path.join(fileURLToPath(import.meta.url), '../../templates/views'))
+const partialsPath = path.join(path.join(fileURLToPath(import.meta.url), '../../templates/partials'))
 
 // Setup handlebars engine and views location
 app.set('view engine', 'hbs')
