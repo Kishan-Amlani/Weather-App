@@ -8,9 +8,9 @@ const app = express()
 const port = process.env.PORT || 3000
 
 // Define paths for express config
-const publicDirectoryPath = path.join(fileURLToPath(import.meta.url), '../../public')
-const viewsPath = path.join(path.join(fileURLToPath(import.meta.url), '../../templates/views'))
-const partialsPath = path.join(path.join(fileURLToPath(import.meta.url), '../../templates/partials'))
+const publicDirectoryPath = path.join(path.resolve(), '../public')
+const viewsPath = path.join(path.join(path.resolve(), '../templates/views'))
+const partialsPath = path.join(path.join(path.resolve(), '../templates/partials'))
 
 // Setup handlebars engine and views location
 app.set('view engine', 'hbs')
